@@ -11,7 +11,7 @@ const LoginClientes = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState<boolean>(true);
+  const [erro, setErro] = useState<boolean>(false);
   const[mensagemErro, setMensagemErro] = useState<string>("")
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,7 +52,7 @@ setTimeout(() => {
     catch (error: any) {
       
       
-      setErro(false)
+      setErro(true)
       setMensagemErro("ERRO AO TENTAR LOGAR")
     }
   };
