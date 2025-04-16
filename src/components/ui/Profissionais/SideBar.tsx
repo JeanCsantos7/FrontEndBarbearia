@@ -16,7 +16,7 @@ const SideBar = () => {
   const criarHorarios = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post("https://back-barbearia.vercel.app/registrarHorarios", {
+      await axios.post("https://barbearia-backend-six.vercel.app/registrarHorarios", {
         data,
         horario,
         barbeiro,

@@ -28,7 +28,7 @@ const SobreComponent = () => {
                     >
                         QUEM SOMOS ?
                     </h2>
-                    <p className="text-[#fff] text-lg  lg:text-left  mt-4 md: text-md text-center ">
+                    <p className="text-[#fff] text-lg  lg:text-left  mt-4 md: text-md text-center p-[6.4%] ">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Vero temporibus dolor labore culpa qui autem sapiente
                         vitae ex quasi placeat in, suscipit, assumenda, eligendi

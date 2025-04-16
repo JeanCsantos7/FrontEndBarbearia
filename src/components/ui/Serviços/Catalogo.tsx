@@ -9,14 +9,14 @@ const Catalogo = () => {
                 alt="Barber Pole"
             />
 
-            <div className="flex flex-col w-full h-auto md:h-[100vh] bg-[#1b1b1b] text-white p-5 md:p-12">
+            <div className="flex flex-col w-full h-auto md:h-[100vh] bg-[#1b1b1b] text-white p-12 md:p-12">
                 <h1
                     style={{ fontFamily: 'Bebas Neue, serif' }}
                     className="text-center md:text-left text-5xl md:text-6xl lg:text-7xl"
                 >
                     TABELA DE SERVIÇOS
                 </h1>
-                <hr className="bg-[#e0e0e0] h-[3px] w-[40%] mx-auto md:ml-0 mt-4 md:mt-6" />
+                <hr className="bg-[#e0e0e0] h-[3px] w-[55%] mx-auto md:ml-0 mt-4 md:mt-6" />
 
                 <div className="mt-6 space-y-4 text-center md:text-left text-lg md:text-2xl font-semibold">
                     {[

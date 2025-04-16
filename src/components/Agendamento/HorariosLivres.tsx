@@ -35,7 +35,7 @@ const HorariosLivres = () => {
   const readAPI = () => {
 
     axios
-    .get(`https://back-barbearia.vercel.app/listaHorarios/${barbeiro}`)
+    .get(`https://barbearia-backend-six.vercel.app/listaHorarios/${barbeiro}`)
     .then((response) => {
       const datasFormatadas = response.data.map((date: DadosAPI) => ({
         ...date,
@@ -72,7 +72,7 @@ const HorariosLivres = () => {
   const deletarHorarios = async () => {
     if (selectedId) {
       try {
-        await axios.delete(`https://back-barbearia.vercel.app/deletarHorarios/${selectedId}`);
+        await axios.delete(`https://barbearia-backend-six.vercel.app//deletarHorarios/${selectedId}`);
         setDatas(datas.filter((item) => item.id !== selectedId));
         closeModal();
       } catch (error) {
@@ -83,7 +83,7 @@ const HorariosLivres = () => {
 
   const Editar = async (id: number) => {
     try {
-      await axios.put(`https://back-barbearia.vercel.app/editarHorarios/${id}`, {
+      await axios.put(`https://barbearia-backend-six.vercel.app/editarHorarios/${id}`, {
         data: editarData,
         horario: editarHorario,
       },

@@ -22,7 +22,7 @@ const Cadastro = () => {
 
            e.preventDefault()
 
-        const linkAPI = 'https://back-barbearia.vercel.app/registrarClientes'
+        const linkAPI = 'https://barbearia-backend-six.vercel.app/registrarClientes'
         await axios.post(linkAPI, {
             nome: nome,
            email:email,

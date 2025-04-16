@@ -21,12 +21,12 @@ const Footer = () => {
                     <ul className="flex flex-wrap items-center gap-4 text-sm font-medium text-secondary-text dark:text-gray-400">
                         <li>
                             <a href="#" className="hover:underline">
-                                <FaInstagram className="text-3xl hover:text-[#fff] ease-in-out duration-500" />
+                                <FaInstagram className="text-3xl text-[#141414] hover:text-[#fff] ease-in-out duration-500" />
                             </a>
                         </li>
                         <li>
                             <a href="#" className="hover:underline">
-                                <FaWhatsapp className="text-3xl hover:text-[#fff] ease-in-out duration-500" />
+                                <FaWhatsapp className="text-3xl text-[#141414] hover:text-[#fff] ease-in-out duration-500" />
                             </a>
                         </li>
 
@@ -45,7 +45,7 @@ const Footer = () => {
                 <hr className="my-6 border-gray-300 dark:border-gray-700" />
                 <span className="block text-sm text-secondary-text text-center dark:text-gray-400">
                     © 2025{' '}
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="text-[#141414] hover:underline">
                         Street Barbershop™
                     </a>
                     . Todos Direitos Reservados.
