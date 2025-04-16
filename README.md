@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# 💈 Street BarberShop - Sistema de Agendamento
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao sistema de agendamento da barbearia Street Barbershop! Este projeto foi realizado com base nas instruções e necessidades do cliente onde o objetivo principal é facilitar o agendamento de horários para clientes e o gerenciamento da agenda dos profissionais.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- TailwindCSS
+- Axios
+- React Router DOM
+- DayJs
+- React-modal
+- React-icons
 
-## Expanding the ESLint configuration
+  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🧠 Funcionalidades
 
-- Configure the top-level `parserOptions` property like this:
+### 👤 Cliente
+- Cadastro de conta
+- Login com validação
+- Visualização de horários disponíveis
+- Agendamento de horários com base no profissional de preferência
+- Agendamento de serviços
+- Visualização de agendamentos futuros
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### ✂️ Profissional
+- Login com permissão específica
+- Visualização dos horários agendados
+- Confirmação e gerenciamento de horários
+- Pequeno Painel Administrativo.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📸 Prints (opcional)
+
+![image](https://github.com/user-attachments/assets/61a1837e-b557-4918-aa14-100172d4680c)
+
+
+Confira o resultado do projeto aqui: https://barbeariastreet.netlify.app/
+
+## 🔧 Como rodar o projeto localmente
+
+# Clone o repositório
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+# Vá até a pasta do backend
+cd FrontBarbearia
+
+# Instale as dependências
+npm install
+
+# Rode o servidor
+npm run dev
