@@ -43,7 +43,7 @@ Confira o resultado do projeto aqui: https://barbeariastreet.netlify.app/
 ## 🔧 Como rodar o projeto localmente
 
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/JeanCsantos7/FrontEndBarbearia
 
 # Vá até a pasta do backend
 cd FrontBarbearia
