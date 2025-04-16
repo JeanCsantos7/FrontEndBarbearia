@@ -49,13 +49,16 @@ setTimeout(() => {
     } 
     
     
-    catch (error: any) {
-      
-      
-      setErro(true)
-      setMensagemErro("ERRO AO TENTAR LOGAR")
-    }
-  };
+   catch (error: any) {
+  setErro(true);
+  setMensagemErro("ERRO AO TENTAR LOGAR");
+
+  // Faz a mensagem sumir após 8 segundos
+  setTimeout(() => {
+    setErro(false);
+    setMensagemErro("");
+  }, 8000);
+}
   
 
   return (
