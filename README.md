@@ -33,7 +33,6 @@ Bem-vindo ao sistema de agendamento da barbearia Street Barbershop! Este projeto
 
 
 
-## 📸 Prints (opcional)
 
 ![image](https://github.com/user-attachments/assets/61a1837e-b557-4918-aa14-100172d4680c)
 
@@ -45,7 +44,7 @@ Confira o resultado do projeto aqui: https://barbeariastreet.netlify.app/
 # Clone o repositório
 git clone https://github.com/JeanCsantos7/FrontEndBarbearia
 
-# Vá até a pasta do backend
+# Vá até a pasta onde está o projeto
 cd FrontBarbearia
 
 # Instale as dependências
