@@ -29,7 +29,7 @@ const HorariosAgendamentos = () => {
 
   const readAPI = async () => {
     await axios
-      .get(`https://back-barbearia.vercel.app/listaHorarios/${barbeiro}`)
+      .get(`https://barbearia-backend-six.vercel.app/listaHorarios/${barbeiro}`)
       .then((response) => {
         const datasFormatadas = response.data.map((item: DadosAPI) => ({
           ...item,
@@ -52,7 +52,7 @@ const HorariosAgendamentos = () => {
     }
 
     try {
-      await axios.post("https://back-barbearia.vercel.app/agendamentoRealizado", {
+      await axios.post("https://barbearia-backend-six.vercel.app/agendamentoRealizado", {
         nome,
         barbeiro,
         telefone,
@@ -79,7 +79,7 @@ const HorariosAgendamentos = () => {
 
   const limparAgenda = () => {
     try {
-      axios.delete(`https://back-barbearia.vercel.app/deletarHorarios/${selectedId}`);
+      axios.delete(`https://barbearia-backend-six.vercel.app/deletarHorarios/${selectedId}`);
       readAPI();
     } catch (error) {
       alert(error);

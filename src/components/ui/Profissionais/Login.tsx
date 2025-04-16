@@ -20,7 +20,7 @@ const LoginBarbeiros = () => {
     e.preventDefault();
     try {
       const response  = await axios.post(
-        "https://back-barbearia.vercel.app/admin/barbeiros", 
+        "https://barbearia-backend-six.vercel.app/admin/barbeiros", 
         { email, senha }
       );
 

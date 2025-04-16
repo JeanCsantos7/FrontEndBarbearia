@@ -20,7 +20,7 @@ const MeusAgendamentos = () => {
   const readAPI = async () => {
     try {
       const APIs = await axios.get(
-        `https://back-barbearia.vercel.app/horariosClientes/${nome}`
+        `https://barbearia-backend-six.vercel.app/horariosClientes/${nome}`
       );
       setDados(APIs.data);
     } catch (error) {

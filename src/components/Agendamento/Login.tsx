@@ -23,7 +23,7 @@ const LoginClientes = () => {
 
     try {
       const response = await axios.post(
-        "https://back-barbearia.vercel.app/loginClientes", 
+        "https://barbearia-backend-six.vercel.app/loginClientes", 
         { email, senha }
       );
   

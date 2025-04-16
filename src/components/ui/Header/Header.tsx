@@ -1,59 +1,67 @@
-import Logotipo from '../assets/OIG4.7y-removebg-preview.png';
-import { FaInstagram } from 'react-icons/fa';
-import { TfiMenuAlt } from 'react-icons/tfi';
-import MenuMobile from './MenuMobile';
-import { FaWhatsapp } from 'react-icons/fa6';
-import { useState } from 'react';
+import Logotipo from "../assets/OIG4.7y-removebg-preview.png";
+import { FaInstagram } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa6";
+import { TfiMenuAlt } from "react-icons/tfi";
+import MenuMobile from "./MenuMobile";
+import { useState } from "react";
 
 const Header = () => {
-    const [statusMenu, setStatus] = useState<boolean>(true);
-    const [AtivarMenu, setDesativarMenu] = useState<any>();
+  const [menuAberto, setMenuAberto] = useState(false);
 
-    const Mobile = () => {
-        setDesativarMenu(statusMenu ? <MenuMobile /> : '');
-        setStatus(!statusMenu);
-    };
+  const toggleMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
 
-    return (
-        <header className="bg-gradient-to-b from-[#747474] to-white h-32 w-full fixed top-0 z-10">
-            <nav className="flex items-center justify-evenly ">
-                <a href="#home">
-                    <img
-                        src={Logotipo}
-                        alt="Logotipo"
-                        className=" lg:w-[28%] cursor-pointer p-10  sm: w-[47%]"
-                    />
-                </a>
+  return (
+    <header className="bg-gradient-to-b from-[#747474] to-white w-full fixed top-0 z-10 shadow-md">
+      <nav className="flex flex-wrap items-center justify-between px-4 py-3 max-w-7xl mx-auto">
 
-                {['Sobre', 'Servicos', 'Profissionais'].map(item => (
-                    <a
-                        key={item}
-                        href={`#${item.toLowerCase()}`}
-                        className="lg:block relative font-semibold text-md text-[#141414] group hover:text-[#ffffff] ease-in-out duration-500 sm: hidden"
-                    >
-                        {item}
-                        <span className="absolute bottom-0 left-0 h-0.5 bg-[#f03636] w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                ))}
+        <a href="#home">
+          <img
+            src={Logotipo}
+            alt="Logotipo"
+            className="w-32 sm:w-40 md:w-48 lg:w-52 cursor-pointer"
+          />
+        </a>
 
-                <TfiMenuAlt
-                    className="lg:hidden sm: block text-5xl mr-[15%]"
-                    onClick={Mobile}
-                />
+   
+        <div className="hidden lg:flex gap-6 items-center">
+          {["Sobre", "Servicos", "Profissionais"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="relative font-semibold text-md text-[#141414] group hover:text-[#ffffff] transition duration-300"
+            >
+              {item}
+              <span className="absolute bottom-0 left-0 h-0.5 bg-[#f03636] w-0 group-hover:w-full transition-all duration-300"></span>
+            </a>
+          ))}
+        </div>
 
-                <span className="lg:flex gap-2.5 sm: hidden ">
-                    <a href="https://www.instagram.com/streetbarbershop.vca/">
-                        <FaInstagram className="text-3xl hover:text-[#fff] ease-in-out duration-500" />
-                    </a>
-                    <a href="">
-                        <FaWhatsapp className="text-3xl hover:text-[#fff] ease-in-out duration-500" />
-                    </a>
-                </span>
-            </nav>
+        {/* Redes sociais (Desktop) */}
+        <div className="hidden lg:flex gap-4">
+          <a href="https://www.instagram.com/streetbarbershop.vca/" target="_blank">
+            <FaInstagram className="text-2xl hover:text-white transition duration-300" />
+          </a>
+          <a href="#">
+            <FaWhatsapp className="text-2xl hover:text-white transition duration-300" />
+          </a>
+        </div>
 
-            <div>{AtivarMenu}</div>
-        </header>
-    );
+
+        <button onClick={toggleMenu} className="lg:hidden text-3xl text-black">
+          <TfiMenuAlt />
+        </button>
+      </nav>
+
+    
+      {menuAberto && (
+        <div className="lg:hidden">
+          <MenuMobile />
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default Header;

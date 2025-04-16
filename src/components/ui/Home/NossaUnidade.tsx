@@ -44,7 +44,7 @@ const NossaUnidade = () => {
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
-                    className="bg-white p-6 rounded-lg flex flex-col justify-between shadow-lg w-[25%] h-[60vh] mx-auto mt-20 md:w-[85%]"
+                    className="bg-white p-6 rounded-lg flex flex-col justify-between shadow-lg lg:w-[30%] md:w-[87%] h-[60vh] mx-auto mt-20 "
                     overlayClassName="fixed inset-0 bg-black/65 flex items-center"
                 >
                     <button onClick={closeModal} className="text-[#000] text-lg ml-[90%]">X</button>

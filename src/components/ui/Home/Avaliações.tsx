@@ -44,7 +44,7 @@ const Avaliações = () => {
                     {listaAvaliacoes.slice(startIndex, startIndex + cardsPorPagina).map((item) => (
                         <div
                             key={item.id}
-                            className="bg-[#fff] text-[#000] rounded-xl p-6 shadow-lg flex flex-col justify-between h-55"
+                            className="bg-[#fff] text-[#000] rounded-xl p-6 shadow-lg flex flex-col justify-between h-85"
                         >
                             <h5 className="text-2xl font-bold">{item.nome}</h5>
                             <p className="text-[#000] text-sm text-left">{item.avaliacao}</p>

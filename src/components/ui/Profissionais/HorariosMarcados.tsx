@@ -22,7 +22,7 @@ const HorariosMarcados = () => {
   useEffect(() => {
     const readAPI = async () => {
       try {
-        const response = await axios.get(`https://back-barbearia.vercel.app/agendamentoBarbeiro/${nome}`);
+        const response = await axios.get(`https://barbearia-backend-six.vercel.app/agendamentoBarbeiro/${nome}`);
         setResultado(response.data);
       } catch (error) {
         console.error(error);
