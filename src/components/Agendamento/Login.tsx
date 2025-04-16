@@ -1,69 +1,52 @@
-import Logotipo from "../ui/assets/OIG4.7y-removebg-preview.png"
+import Logotipo from "../ui/assets/OIG4.7y-removebg-preview.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
-
-
-
 
 const LoginClientes = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState<boolean>(false);
-  const[mensagemErro, setMensagemErro] = useState<string>("")
+  const [mensagemErro, setMensagemErro] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-   
-
-
 
     try {
       const response = await axios.post(
-        "https://barbearia-backend-six.vercel.app/loginClientes", 
+        "https://barbearia-backend-six.vercel.app/loginClientes",
         { email, senha }
       );
-  
+
       const { token, role, nome } = response.data;
-  
 
       sessionStorage.setItem("token", token);
       sessionStorage.setItem("role", role);
       sessionStorage.setItem("nome", nome);
-  
+
       const permissao = sessionStorage.getItem("role");
- 
-      
-setTimeout(() => {
-  permissao === "user" ? navigate("/Agendamento") : navigate("/LoginClientes");
-  
-}, 3650)
 
-    
+      setTimeout(() => {
+        permissao === "user"
+          ? navigate("/Agendamento")
+          : navigate("/LoginClientes");
+      }, 3650);
+    } catch (error: any) {
+      setErro(true);
+      setMensagemErro("ERRO AO TENTAR LOGAR");
 
-    
-  
-    } 
-    
-    
-   catch (error: any) {
-  setErro(true);
-  setMensagemErro("ERRO AO TENTAR LOGAR");
-
-  // Faz a mensagem sumir após 8 segundos
-  setTimeout(() => {
-    setErro(false);
-    setMensagemErro("");
-  }, 8000);
-}
-  
+      // Faz a mensagem sumir após 8 segundos
+      setTimeout(() => {
+        setErro(false);
+        setMensagemErro("");
+      }, 8000);
+    }
+  };
 
   return (
     <div className="flex min-h-screen flex-col justify-center lg:px-8 bg-[#f3f3f3]">
-      <div className="sm:mx-auto  sm:w-full sm:max-w-sm">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           alt="Your Company"
           src={Logotipo}
@@ -74,10 +57,13 @@ setTimeout(() => {
         </h2>
       </div>
 
-      <div className="mt-10  sm:mx-auto p-[5%]  sm:w-full sm:max-w-sm">
+      <div className="mt-10 sm:mx-auto p-[5%] sm:w-full sm:max-w-sm">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm/6 font-medium text-[#747474]">
+            <label
+              htmlFor="email"
+              className="block text-sm/6 font-medium text-[#747474]"
+            >
               Email
             </label>
             <div className="mt-2">
@@ -96,7 +82,10 @@ setTimeout(() => {
 
           <div>
             <div className="flex items-center justify-between">
-              <label htmlFor="password" className="block text-sm/6 font-medium text-[#747474]">
+              <label
+                htmlFor="password"
+                className="block text-sm/6 font-medium text-[#747474]"
+              >
                 Senha
               </label>
             </div>
@@ -114,10 +103,11 @@ setTimeout(() => {
             </div>
           </div>
 
-          {erro && <div className="text-red-500 text-sm">{mensagemErro}</div>
-          
-          
-          }
+          {erro && (
+            <div className="text-red-500 text-sm text-center">
+              {mensagemErro}
+            </div>
+          )}
 
           <div>
             <button
@@ -130,8 +120,12 @@ setTimeout(() => {
         </form>
 
         <p className="mt-10 text-center text-sm/6 text-[#000]">
-          Ainda não tem uma conta{' '}
-          <a href="#" className="font-semibold text-[#747474] hover:bg-[#616161]" onClick={() => navigate("/Cadastro")}>
+          Ainda não tem uma conta{" "}
+          <a
+            href="#"
+            className="font-semibold text-[#747474] hover:bg-[#616161]"
+            onClick={() => navigate("/Cadastro")}
+          >
             Clique aqui e Cadastre-se
           </a>
         </p>
